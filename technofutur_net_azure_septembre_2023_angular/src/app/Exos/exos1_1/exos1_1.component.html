@@ -1,0 +1,28 @@
+<div>
+    <h1><ins>Exos1 : Chronomètres</ins></h1>
+
+    <div>
+        <h2>Chronomètre Secondes</h2>
+        <p>{{chrono}}</p>
+        <button (click)="startChrono()">Start</button>
+        <button (click)="stopChrono()">Stop</button>
+        <button (click)="resetChrono()">Reset</button>
+    </div>
+
+    <div>
+        <h2>Chronomètre Minutes/Secondes</h2>
+        <p>{{getFormattedTime()}}</p>
+        <button (click)="startChrono2()">Start</button>
+        <button (click)="stopChrono2()">Stop</button>
+        <button (click)="resetChrono2()">Reset</button>
+    </div>
+
+    <div>
+        <h2>Chronomètre Minutes/Secondes/Milli</h2>
+        <p>{{getFormattedTime2()}}</p>
+        <button (click)="startChrono3()">Start</button>
+        <button (click)="stopChrono3()">Stop</button>
+        <button (click)="resetChrono3()">Reset</button>
+    </div>
+
+</div>

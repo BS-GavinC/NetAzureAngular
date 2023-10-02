@@ -1,0 +1,38 @@
+<div>
+    <h1><ins>Exos 3 : Panier de courses</ins></h1>
+
+    <div>
+        <div>
+            <div>
+                <h2><ins>Ajouter un article :</ins></h2>
+                <input type="text" [(ngModel)]="nouvelArticle" placeholder="Nouvel article">
+                <button (click)="ajouterArticle()">Ajouter</button>
+            </div>
+
+            <div>
+                <h2><ins>Sélectionner Article :</ins></h2>
+                <ul>
+                    <li *ngFor="let article of articles">
+                        <label>
+                            <input type="checkbox" [(ngModel)]="article.isSelected"> {{ article.name }}
+                        </label>
+                    </li>
+                </ul>
+                <div>
+                    <button (click)="ajouterArticlesSelectionnes()">Ajouter</button>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <h2><ins>Article du Panier :</ins></h2>
+                <ul>
+                    <li *ngFor="let article of panierCourses">{{ article }}</li>
+                </ul>
+                <button (click)="desassemblerEtJoindreTableau()">Désassembler et Joindre</button>
+                <p>Résultat du désassemblage : {{ resultatDesassemble }}</p>
+            </div>
+        </div>
+    </div>
+</div>

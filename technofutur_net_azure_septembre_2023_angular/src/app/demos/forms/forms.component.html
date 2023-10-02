@@ -1,0 +1,24 @@
+<p>forms works!</p>
+
+<form [formGroup]="myGroup" (ngSubmit)="submit()">
+  <p>Pseudo</p>
+  <input type="text" formControlName="pseudo">
+  <p>Email</p>
+  <input type="email" formControlName="email">
+  <div *ngIf="!myGroup.get('email')!.valid">
+    <p>Email invalide</p>
+  </div>
+
+  <p>password</p>
+  <input type="password" formControlName="password">
+
+  <p>Array</p>
+  <div formArrayName="array" *ngFor="let c of getArray().controls; let i = index">
+    <input type="text" [formControlName]="i">
+    <button type="button" (click)="removeToArray(i)">Remove</button>
+  </div>
+  <button type="button" (click)="addToArray()">ADD</button>
+
+  <button type="submit" [disabled]="!myGroup.valid">Valider</button>
+
+</form>

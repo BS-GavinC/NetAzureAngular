@@ -1,0 +1,30 @@
+<h3>
+  | Les pipes |
+</h3>
+
+<h4>String pipe</h4>
+<p>Valeur de myString : {{myString}}</p>
+<p>Upper pipe : {{myString | uppercase}}</p>
+<p>Lower pipe : {{myString | lowercase}}</p>
+<p>Title pipe : {{myString | titlecase}}</p>
+
+<h4>Number pipe</h4>
+<p>Valeur de myNumber : {{myNumber}}</p>
+<p>Pipe Number : {{myNumber | number : '10.0-2'}}</p>
+<!-- minimum de nombre avant la virgule avant le .
+     après le . minimum 0 - maximum 2 chiffre après la virgule -->
+
+<p>Currency pipe : {{myNumber | currency : 'USD'}}</p>
+
+<h4>Date Pipe</h4>
+<p>Valeur de myDate : {{myDate}}</p>
+<p>Date pipe : {{myDate | date : 'dd-MM-yyyy'}}</p>
+<p>Date pipe : {{myDate | date : 'Date du jour : dd mm yyyy' }}</p>
+
+<h4>Json pipe</h4>
+<p>Valeur de myObject : {{myObject}}</p>
+<p>Json Pipe : {{myObject | json}}</p>
+
+<h4>Custom pipe</h4>
+<p>Valeur en Euro : {{valeurEnEuro}}</p>
+<p>Valeur en BTC : {{valeurEnEuro | eurtobtc}}</p>

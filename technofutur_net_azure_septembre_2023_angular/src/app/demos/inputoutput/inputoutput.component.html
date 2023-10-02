@@ -1,0 +1,16 @@
+<h3>Input Output</h3>
+<input [(ngModel)]="myValue">
+<p>Valeur renvoyée par l'enfant : {{valueFromChildren}}</p>
+
+<hr />
+<app-children [valueFromParent]="myValue"
+              value2="toto"
+              (reponseEvent)="recevoirReponse($event)">
+  <ul>
+    <li>Angular</li>
+    <li>Blazor</li>
+    <li>ASP</li>
+    <li>Git</li>
+  </ul>
+</app-children>
+

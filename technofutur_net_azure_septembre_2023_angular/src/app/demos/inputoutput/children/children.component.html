@@ -1,0 +1,8 @@
+<h3>Contenu du composant enfant</h3>
+<p>Valeur venue du parent : {{valueFromParent}}</p>
+
+<p *ngFor="let m of maListe">
+  {{m}} <button (click)="envoyerChoix(m)">Choisir</button>
+</p>
+
+<!-- <ng-content></ng-content> -->

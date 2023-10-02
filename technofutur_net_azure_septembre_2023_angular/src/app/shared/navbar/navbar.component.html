@@ -1,0 +1,63 @@
+
+
+
+<nav>
+  <div class="nav-wrapper">
+
+    <a routerLink="" class="brand-logo">Accueil</a>
+
+
+    <ul class="right hide-on-med-and-down">
+      <li>
+        <button class="waves-effect waves-light btn" disabled>{{ isConnect() }}</button>
+      </li>
+      <li>
+        <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+          Démonstration de code angular
+          <i class="material-icons right">arrow_drop_down</i>
+        </a>
+      </li>
+
+      <li>
+        <a class="dropdown-trigger" href="#!" data-target="dropdown2">
+          Exercises Angular pratico pratique
+          <i class="material-icons right">arrow_drop_down</i>
+        </a>
+      </li>
+
+
+    </ul>
+
+  </div>
+</nav>
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+
+  <li><a routerLink="demos/bindings">1 : Bindings</a></li>
+  <li><a routerLink="demos/pipes">2 : Pipes</a></li>
+  <li><a routerLink="demos/inputoutput">3 : @Input/@Output</a></li>
+  <li><a routerLink="demos/#">4 : Directives Struct</a></li>
+  <li><a routerLink="demos/directivesng">5 : Directives de Compo</a></li>
+  <li><a routerLink="demos/directivecustom">6 : Directives Custom</a></li>
+  <li><a routerLink="demos/publiccompo">7 : Partie Public (Guards)</a></li>
+  <li><a routerLink="demos/privatecompo">7 : Partie Privée (Guards)</a></li>
+  <li><a routerLink="demos/typages">8 : Typages TS</a></li>
+  <li><a routerLink="demos/signals">9 : Signal()</a></li>
+  <li><a routerLink="demos/forms">10 : Forms</a></li>
+
+</ul>
+
+
+<!-- Dropdown Structure -->
+<ul id="dropdown2" class="dropdown-content">
+
+  <li><a routerLink="exos/exos1_1">Exos 1.1 : Chrono - Bindings</a></li>
+  <li><a routerLink="exos/exos1_2">Exos 1.2 : Panier - Bindings</a></li>
+  <li><a routerLink="exos/exos_2">Exos 2 : Chrono - Custom Pipe</a></li>
+  <li><a routerLink="exos/exos_3">Exos 3 : Panier - Directives Struct</a></li>
+  <li><a routerLink="exos/exos_4">Exos 4 : Custom directive</a></li>
+  <li><a routerLink="exos/exos_5">Exos 5 : Panier - services & storage</a></li>
+
+</ul>
+

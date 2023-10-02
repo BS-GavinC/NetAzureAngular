@@ -1,0 +1,94 @@
+<h1 class="header center  blue-grey-text text-darken-1">Exos 5 : le panier de course avec services</h1>
+
+
+<div class="row">
+
+    <div class="col s6" *ngIf="isConnect(); else isConnectState">
+        <div class="card blue-grey darken-1 hoverable">
+            <div class="card-content white-text">
+                <span class="card-title">Add to cart</span>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input [(ngModel)]="newArticleName" id="name" type="text" class="validate">
+                        <label for="name">Article Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input [(ngModel)]="newArticleQty" id="qty" type="number" class="validate">
+                        <label for="qty">Article Quantity</label>
+                    </div>
+                    <button 
+                        (click)="addArticle()" 
+                        *ngIf="newArticleName != '' && newArticleQty > 0 && newArticleQty <= 5"
+                        class="waves-effect waves-light btn-large"
+                    >
+                        Ajouter
+                    </button>
+
+                    <button 
+                        class="waves-effect waves-light btn-large orange"
+                        *ngIf="isConnect()"
+                        (click)="logout()"
+                    >Logout</button>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+
+    <ng-template #isConnectState>
+        <div class="col s6">
+            <div class="card blue-grey darken-1 hoverable">
+                <div class="card-content white-text">
+                    <span class="card-title">Connection</span>
+                    <button 
+                        class="waves-effect waves-light btn-large"
+                        *ngIf="!isConnect()"
+                        (click)="login()"
+                    >Login</button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+    <div class="col s6">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text hoverable">
+                <span class="card-title">List of article</span>
+                <table class="striped">
+                    <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Quantity (5 max)</th>
+                          <th>Options</th>
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                      <tr *ngFor="let item of listArticles">
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.qty }}</td>
+                        <td><button (click)="deleteArticle(item.name)" class="waves-effect waves-light btn red">x</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col s12">
+        <div class="card green darken-1">
+            <div class="card-content black-text hoverable">
+                <span class="card-title">List of article for mamy</span>
+                <ul class="collection">
+                    <li *ngFor="let item of listArticles" class="collection-item">
+                        * {{ item.qty }} x {{ item.name }} ajouté le : {{ item.dateAjout | date : "dd/MM/yyyy hh:mm:ss" }} - Traduction Pour mamy : {{ item.qty | mamy }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</div>

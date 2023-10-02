@@ -1,0 +1,34 @@
+<div>
+  <div>
+    <div>
+      <div>
+        <label>Article : </label>
+        <input type="text" [(ngModel)]="newArticle">
+        <button (click)="ajoutArticle()" [disabled]="newArticle == ''">Valider</button>
+      </div>
+    </div>
+    <div>
+      <ol>
+        <li *ngFor="let a of articleList; let i = index;">
+          {{a}} &nbsp; <button (click)="ajout(i)" [class]="style">+</button>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div *ngIf="shoppingList.length > 0 ; else listevide">
+     <ul [class]="shoppingList.length > 5 ? 'limit' : ''">
+      <li *ngFor="let article of shoppingList; let i = index; let pair = even">
+       <span [ngClass]="pair ? 'pair' : ''">{{i+1}} - {{article}}</span>
+      </li>
+     </ul>
+
+     <div>
+      <button (click)="desassembler()">Casser la liste</button>
+      {{listeCassee}}
+     </div>
+  </div>
+  <ng-template #listevide>
+    <h3>La liste est encore vide !</h3>
+  </ng-template>
+</div>
