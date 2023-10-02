@@ -20,6 +20,8 @@ import { mamyGuard } from './demos/guards/mamy.guard';
 import { TypagesComponent } from './demos/typages/typages.component';
 import { SignalsComponent } from './demos/signals/signals.component';
 import { FormsComponent } from './demos/forms/forms.component';
+import { Exos6Component } from './Exos/exos6/exos6.component';
+import { HttpComponent } from './demos/http/http.component';
 
 
 
@@ -37,7 +39,8 @@ const routes: Routes = [
     { path : "privatecompo", canActivate : [mamyGuard], component : PrivateCompoComponent},
     { path : "typages", component : TypagesComponent},
     { path : "signals", component : SignalsComponent},
-    { path : "forms", component : FormsComponent}
+    { path : "forms", component : FormsComponent},
+    {path : 'http', component : HttpComponent}
   ]},
 
 
@@ -48,6 +51,7 @@ const routes: Routes = [
     { path : "exos_3", component: Exos3Component},
     { path : "exos_4", component: Exos4Component},
     { path : "exos_5", component: Exos5Component},
+    { path : "exos_6", component: Exos6Component}
   ]}
 ];
 

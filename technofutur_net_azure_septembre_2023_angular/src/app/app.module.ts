@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -35,6 +35,8 @@ import { TypagesComponent } from './demos/typages/typages.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SignalsComponent } from './demos/signals/signals.component';
 import { FormsComponent } from './demos/forms/forms.component';
+import { Exos6Component } from './Exos/exos6/exos6.component';
+import { HttpComponent } from './demos/http/http.component';
 
 
 
@@ -70,7 +72,9 @@ import { FormsComponent } from './demos/forms/forms.component';
     TypagesComponent,
     FooterComponent,
     SignalsComponent,
-    FormsComponent
+    FormsComponent,
+    Exos6Component,
+    HttpComponent
 
 
   ],
@@ -80,6 +84,7 @@ import { FormsComponent } from './demos/forms/forms.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

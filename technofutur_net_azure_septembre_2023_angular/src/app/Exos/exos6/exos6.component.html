@@ -1,0 +1,14 @@
+<p>exos6 works!</p>
+
+<form [formGroup]="myFormGroup" (ngSubmit)="submit()">
+  <p>Email</p>
+  <input type="email" formControlName="email">
+  <p>Password</p>
+  <input type="password" formControlName="password">
+  <p>Password Confirmation</p>
+  <input type="password" formControlName="passwordConfirmation">
+  <p>BirthDate</p>
+  <input type="date" formControlName="birthdate">
+
+  <button [disabled]="!validator">Valider</button>
+</form>
